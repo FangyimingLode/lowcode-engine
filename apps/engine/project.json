@@ -1,0 +1,53 @@
+{
+  "name": "engine",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/engine/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/engine",
+        "index": "apps/engine/src/index.html",
+        "main": "apps/engine/src/main.tsx",
+        "tsConfig": "apps/engine/tsconfig.app.json",
+        "rspackConfig": "apps/engine/rspack.config.js",
+        "assets": ["apps/engine/src/favicon.ico", "apps/engine/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "engine:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "engine:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "engine:build",
+        "spa": true
+      }
+    }
+  }
+}
