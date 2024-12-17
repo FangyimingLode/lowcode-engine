@@ -4,6 +4,9 @@ import { useSkeletonStore } from './useSkeletonStore';
 import { useSettersStore } from './useSettersStore';
 import { useMaterialStore } from './useMaterialStore';
 
+/**
+ * 插件系统
+ **/
 export const usePluginStore = create<PluginStore>((set, get) => ({
   plugins: new Map(),
   register: async (creator: PluginConfigCreator, options?: unknown) => {

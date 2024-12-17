@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useEngineStore } from '@lowcode-engine/model';
 import { Button, Drawer } from 'antd';
 import { MonacoEditor } from '@lowcode-engine/monaco-editor';

@@ -2,7 +2,9 @@ import { create } from 'zustand';
 import type { SkeletonState } from '@lowcode-engine/types';
 import { createElement } from 'react';
 
-
+/**
+ * 管理面板工具
+ **/
 export const useSkeletonStore = create<SkeletonState>((set, get) => ({
   areas: {
     left: { items: [] },
@@ -12,6 +14,7 @@ export const useSkeletonStore = create<SkeletonState>((set, get) => ({
     topCenter: { items: [] },
     topRight: { items: [] },
   },
+
   add: (config,area) => {
     const areaState = get().areas[area];
     const current = areaState.items.find((item) => item.name === config.name);
@@ -34,6 +37,7 @@ export const useSkeletonStore = create<SkeletonState>((set, get) => ({
       }));
     }
   },
+
   remove: (name, area) => {
     set((state) => ({
       areas: {
@@ -45,6 +49,7 @@ export const useSkeletonStore = create<SkeletonState>((set, get) => ({
       },
     }));
   },
+
   get: (name, area) => {
     return get().areas[area].items.find((item) => item.name === name);
   },

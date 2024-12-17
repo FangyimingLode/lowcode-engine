@@ -1,5 +1,11 @@
 import type { Interceptors, PageSchema } from './';
 import { JSFunction } from './Prop';
+
+ export interface InsertNodeParams {
+   targetId: string;
+   position: 'before' | 'after' | 'inner';
+   packageName: string;
+ }
 export interface EngineState {
   schema: PageSchema,
   // getSchema: () => PageSchema
@@ -10,4 +16,6 @@ export interface EngineState {
 
   getInterceptors: () => Interceptors
   updateInterceptors: (name: keyof PageSchema['interceptors'], value: JSFunction) => void
+
+  // insertNode: (insertNode: InsertNodeParams) => void
 }

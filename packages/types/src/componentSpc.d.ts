@@ -57,3 +57,12 @@ export interface MaterialStore {
   getComponentSpec: (name: string) => ComponentSpecRaw | undefined;
   addComponentSpec: (packageName: string, spec: ComponentSpecRaw) => void
 }
+
+export interface DesignerState {
+  currentDocument: DocumentModel | null
+  componentSpecMap: Map<string, ComponentSpecRaw>
+  rendererMode: 'design' | 'preview'
+  setCurrentDocument: (doc: DocumentModel) => void
+  setComponentSpec: (spec: Map<string, ComponentSpecRaw>) => void
+  setRendererMode: (mode: 'design' | 'preview') => void
+}

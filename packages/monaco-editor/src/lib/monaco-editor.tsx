@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Editor, { OnMount, OnChange } from '@monaco-editor/react';
 import { useEffect, useRef } from 'react';
+
 const StyledMonacoEditor = styled.div`
   color: pink;
 `;
