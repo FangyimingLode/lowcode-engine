@@ -16,7 +16,8 @@
         "main": "apps/engine/src/main.tsx",
         "tsConfig": "apps/engine/tsconfig.app.json",
         "rspackConfig": "apps/engine/rspack.config.js",
-        "assets": ["apps/engine/src/favicon.ico", "apps/engine/src/assets"]
+        "assets": ["apps/engine/src/favicon.ico", "apps/engine/src/assets"],
+        "standardRspackConfigFunction": true
       },
       "configurations": {
         "development": {

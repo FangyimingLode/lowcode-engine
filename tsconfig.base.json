@@ -18,6 +18,7 @@
       "@lowcode-engine/default-generator": [
         "packages/default-generator/src/index.ts"
       ],
+      "@lowcode-engine/model": ["packages/model/src/index.ts"],
       "@lowcode-engine/monaco-editor": ["packages/monaco-editor/src/index.ts"],
       "@lowcode-engine/simulator": ["packages/simulator/src/index.ts"],
       "@lowcode-engine/types": ["packages/types/src/index.ts"]
