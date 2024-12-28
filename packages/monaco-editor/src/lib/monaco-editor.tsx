@@ -11,10 +11,11 @@ interface MonacoEditorProps {
   onBlur?: (value: string) => void;
   value?: string;
   language?: string;
+  options?: any
 }
 type IStandaloneCodeEditor = Parameters<OnMount>[0];
 
-export function MonacoEditor({ onChange, onBlur, value }: MonacoEditorProps) {
+export function MonacoEditor({ onChange, onBlur, value, options, language = 'javascript' }: MonacoEditorProps) {
   const editorRef = useRef<IStandaloneCodeEditor>();
   const handleEditorDidMount: OnMount = (editor) => {
     editorRef.current = editor;
@@ -36,10 +37,11 @@ export function MonacoEditor({ onChange, onBlur, value }: MonacoEditorProps) {
     <StyledMonacoEditor>
       <Editor
         height="90vh"
-        defaultLanguage="javascript"
+        defaultLanguage={language}
         defaultValue={value}
         onMount={handleEditorDidMount}
         onChange={handleChange}
+        options={options}
       />
 
     </StyledMonacoEditor>

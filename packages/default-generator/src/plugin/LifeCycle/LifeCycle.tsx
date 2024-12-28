@@ -6,7 +6,7 @@ import { MonacoEditor } from '@lowcode-engine/monaco-editor';
 
 export default function LifeCycle() {
   // const { lifeCycles, updateLifeCycle} = useLifeCycles()
-  const lifeCycles = useEngineStore((state) => state.schema.lifeCycle);
+  const lifeCycles = useEngineStore((state) => state.lifeCycles);
   const updateLifeCycle = useEngineStore((state) => state.updateLifeCycle);
   const [active, setActive] = useState(false);
 

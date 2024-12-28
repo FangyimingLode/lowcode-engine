@@ -9,7 +9,7 @@ function InterceptorsPlugin (ctx: PluginContext) {
         content: InterceptorsPane,
         contentProps: {},
         area: 'left'
-      }, 'left')
+      })
     },
     destroy() {
       ctx.skeleton.remove('InterceptorsPane', 'left')

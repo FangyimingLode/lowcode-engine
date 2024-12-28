@@ -8,7 +8,9 @@
     "jsxImportSource": "@emotion/react"
   },
   "files": [],
-  "include": [],
+  "include": [
+    "./src/","@types"
+  ],
   "references": [
     {
       "path": "./tsconfig.lib.json"

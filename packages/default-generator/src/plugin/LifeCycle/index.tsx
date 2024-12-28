@@ -9,7 +9,7 @@ function LifeCyclesPanelPlugin (ctx: PluginContext) {
         content: LifeCycle,
         contentProps: {},
         area: 'left'
-      }, 'left')
+      })
     },
     destroy() {
       ctx.skeleton.remove('LifeCyclesPane', 'left')

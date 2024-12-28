@@ -7,16 +7,8 @@ export default function LeftArea() {
   return (
     <div
       css={css`
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 1;
-        width: 50px;
-        background-color: #fff;
         border-right: 1px solid rgba(0, 0, 0, 0.06);
         text-align: center;
-        color: #1890ff;
         padding-top: 20px;
       `}
     >

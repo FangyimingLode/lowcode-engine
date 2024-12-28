@@ -9,7 +9,7 @@ function SchemaPanePlugin(ctx: PluginContext) {
         content: SchemaPane,
         contentProps: {},
         area: 'left'
-      }, 'left')
+      })
     },
     destroy() {
       ctx.skeleton.remove('SchemaPane', 'left')

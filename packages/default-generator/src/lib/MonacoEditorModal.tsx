@@ -21,7 +21,7 @@ export function MonacoEditorModal({
   return (
     <Modal
       open={open}
-      width={500}
+      width={800}
       title={title}
       footer={[
         <Button key="back" onClick={() => setOpen(false)}>
@@ -30,7 +30,12 @@ export function MonacoEditorModal({
       ]}
       onCancel={() => setOpen(false)}
     >
-      <MonacoEditor onChange={onChange} value={value} language={language} />
+      <MonacoEditor onChange={onChange} value={value} language={language} options={{
+        minimap: { enabled: false },
+        scrollBeyondLastLine: false,
+        automaticLayout: true,
+        fontSize: 14
+      }} />
     </Modal>
   );
 }

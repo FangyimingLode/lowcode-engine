@@ -24,7 +24,7 @@ export interface AreaContainerState {
 }
 
 export interface SkeletonState {
-  add: (config: WidgetConfig, area: WidgetConfigArea) => void
+  add: (config: WidgetConfig) => void
   remove: (name: string, area: WidgetConfigArea) => void
   get: (name:string, area: WidgetConfigArea) => WidgetSpec | undefined
   clear: () => void

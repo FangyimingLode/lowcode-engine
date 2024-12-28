@@ -5,7 +5,7 @@ export interface SetterProps<T> {
   onChange?: (val: T) => void;
 }
 
-interface RegisteredSetter {
+export interface RegisteredSetter {
   view: ElementType<SetterProps<any> & {[attr: string]: any}>
   name: string
 }

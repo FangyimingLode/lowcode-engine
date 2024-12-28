@@ -9,7 +9,7 @@ function ComponentsPanePlugin(ctx: PluginContext) {
         content: ComponentPane,
         contentProps: {},
         area: 'left'
-      }, 'left')
+      })
     },
     destroy() {
       ctx.skeleton.remove('ComponentsPane', 'left')

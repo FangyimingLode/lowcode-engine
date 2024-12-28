@@ -53,7 +53,7 @@ const defaultConfig = {
 
 export default function InterceptorsPane() {
   const [active, setActive] = useState(false);
-  const interceptors = useEngineStore(state => state.schema.interceptors);
+  const interceptors = useEngineStore(state => state.interceptors);
   const updateInterceptors = useEngineStore(state => state.updateInterceptors)
 
 

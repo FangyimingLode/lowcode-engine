@@ -26,7 +26,7 @@ export default function ComponentPane() {
     templates: [],
   });
   const componentSpecMap = useMaterialStore((state) => state.componentSpecMap);
-
+  console.log(componentSpecMap, 'componentSpecMap')
   useEffect(() => {
     const newComponents: {
       layoutComponent: ComponentItem[];
@@ -64,6 +64,10 @@ export default function ComponentPane() {
       setComponents(newComponents);
     });
   }, [componentSpecMap]);
+
+  const handleClick = () => {
+    setActive(!active)
+  }
   return (
     <div>
       组件
@@ -95,9 +99,7 @@ export default function ComponentPane() {
               </div>
             }
           >
-            <AppstoreOutlined
-            // className={cn({ icon: true, active: isActive })}
-            />
+            <AppstoreOutlined onClick={handleClick} />
           </Popover>
         </div>
       </DndProvider>

@@ -21,8 +21,8 @@ export const defaultSetter  = [
 ]
 
 export const defaultPlugin = [
+  ComponentsPanePlugin,
   LifeCyclesPanelPlugin,
   InterceptorsPlugin,
-  ComponentsPanePlugin,
   SchemaPanePlugin,
 ]

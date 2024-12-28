@@ -7,12 +7,12 @@ export const defaultPageSchema: PageSchema = {
   isContainer: true,
   children: [],
   props: {
-    style: ''
+    style: '',
   },
   extraProps: {
     id: {
       type: 'JSRunFunction',
-      value: 'node => node.id'
+      value: 'node => node.id',
     },
     dataSource: {
       type: 'DataSource',
@@ -21,14 +21,14 @@ export const defaultPageSchema: PageSchema = {
         method: 'GET',
         requestHandler: {
           type: 'JSFunction',
-          value: 'function requestHandler(params){return params}'
+          value: 'function requestHandler(params){return params}',
         },
         responseHandler: {
           type: 'JSFunction',
-          value: 'function responseHandler(response) { return response.data }'
-        }
-      }
-    }
+          value: 'function responseHandler(response) { return response.data }',
+        },
+      },
+    },
   },
   lifeCycle: {},
   // 网络请求拦截器
@@ -49,11 +49,10 @@ export const defaultPageSchema: PageSchema = {
                     }
                     return responseData.data
                 }
-            }`
+            }`,
     },
-    request:
-      {
-      type: "JSFunction",
+    request: {
+      type: 'JSFunction',
       value: `
             function requestInterceptor(config) {
                 const token = localStorage.getItem('token')
@@ -65,7 +64,7 @@ export const defaultPageSchema: PageSchema = {
                 }
                 return config;
             }
-            `
-    }
-  }
-}
+            `,
+    },
+  },
+};

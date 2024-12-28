@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { MaterialStore } from '@lowcode-engine/types';
+import type { ComponentSpecRaw, MaterialStore } from '@lowcode-engine/types';
 
 export const useMaterialStore = create<MaterialStore>((set, get) => ({
   componentSpecMap: new Map(),
@@ -32,4 +32,16 @@ export const useMaterialStore = create<MaterialStore>((set, get) => ({
       return { componentSpecMap: newMap };
     });
   },
+  getAll: () => {
+    const {componentSpecMap} = get()
+    const result = new Map<string, ComponentSpecRaw>()
+    for(const [key, spec] of componentSpecMap) {
+      const component = spec.advanced?.component
+      if(component?.containerType !=='Page') {
+        result.set(key,spec)
+      }
+    }
+
+    return result
+  }
 }));

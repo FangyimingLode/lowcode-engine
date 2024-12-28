@@ -15,8 +15,9 @@ export const useSkeletonStore = create<SkeletonState>((set, get) => ({
     topRight: { items: [] },
   },
 
-  add: (config,area) => {
-    const areaState = get().areas[area];
+  add: (config) => {
+    const area = config.area
+    const areaState = get().areas[config.area];
     const current = areaState.items.find((item) => item.name === config.name);
     if (!current) {
       const newWidget = {
